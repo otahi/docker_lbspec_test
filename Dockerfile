@@ -9,9 +9,9 @@ RUN apt-get clean
 USER root
 
 ADD ./nginx.conf /etc/nginx/nginx.conf
-ADD ./dst_node.crt /etc/nginx/dst_node.crt
-ADD ./dst_node.key /etc/nginx/dst_node.key
-RUN cat /etc/nginx/dst_node.crt >> /etc/ssl/certs/ca-certificates.crt
+ADD ./dstnode.crt /etc/nginx/dstnode.crt
+ADD ./dstnode.key /etc/nginx/dstnode.key
+RUN cat /etc/nginx/dstnode.crt >> /etc/ssl/certs/ca-certificates.crt
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 22 80
